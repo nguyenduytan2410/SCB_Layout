@@ -2,6 +2,7 @@
 :root {
   --primary-color: #2a81d0;
   --blue-color: #0058a0;
+  --blueLight-color: #c9e9fb;
   --aux-color: #f0f2f7;
   --white-color: #fff;
 }
@@ -10,6 +11,7 @@
 .header {
   height: 120px;
 }
+
 .sub-navigation__wrapper {
   height: 40px;
   background-color: var(--primary-color);
@@ -47,6 +49,10 @@
   padding: 4px 10px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+}
+.main-navigation__box .icon {
+  width: 1rem;
+  height: 1rem;
 }
 .main-navigation {
   display: block;
@@ -86,7 +92,7 @@
   cursor: pointer;
 }
 .main-navigation__box-menu-item:hover {
-  background-color: #c9e9fb;
+  background-color: var(--blueLight-color);
 }
 .main-navigation__box-icon {
   cursor: pointer;
@@ -113,6 +119,8 @@
   right: 0;
   width: 100%;
   animation: popup 0.8s forwards;
+  border: 1px solid;
+  /* overflow: hidden; */
 }
 @keyframes popup {
   from {
@@ -130,18 +138,62 @@
   padding: 1rem 0 1rem 2rem;
   border-radius: 0.5rem 0 0 0.5rem;
 }
+
 .menu__dropdown-sidebar--list .menu__dropdown-sidebar--item {
   padding: 0.75rem;
   border-radius: 50px 0 0 50px;
   color: var(--blue-color);
   font-size: 15px;
   text-align: left;
+  white-space: nowrap;
   cursor: pointer;
 }
+
 .menu__dropdown-sidebar--list .menu__dropdown-sidebar--item:hover {
   background-color: var(--primary-color);
   color: var(--white-color);
 }
 .sub-menu-content {
+  display: none;
   padding: 2rem;
+  position: absolute;
+  left: 190px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  cursor: default;
+  /* width: 100%; */
+}
+
+.sub-menu__dropdown-item--content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+  width: 10rem;
+}
+.sub-menu__dropdown-info--item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1rem;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  max-width: 150rem;
+  white-space: pre-wrap;
+  line-height: 1.25rem;
+  color: var(--primary-color);
+}
+.sub-menu__dropdown-info--item:hover {
+  background-color: var(--blueLight-color);
+  cursor: pointer;
+}
+.sub-menu__dropdown-info--item .icon {
+  width: 2rem;
+  height: 2rem;
+}
+.sub-menu__dropdown-info--item .sub-menu__dropdown-info-content {
+  width: 200px;
 }
