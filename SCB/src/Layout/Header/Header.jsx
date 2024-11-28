@@ -1,6 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./header.css";
-import { FaSearch } from "react-icons/fa";
+import {
+  FaFileInvoiceDollar,
+  FaRegHourglass,
+  FaRegUser,
+  FaSearch,
+  FaShoppingBasket,
+} from "react-icons/fa";
 import {
   TbUserDollar,
   TbTransactionDollar,
@@ -16,13 +22,17 @@ import {
   TbListCheck,
   TbGift,
   TbCalendarDollar,
+  TbClockDollar,
+  TbWorldDollar,
+  TbTruckDelivery,
+  TbShieldSearch,
+  TbCurrencyDollarSingapore,
 } from "react-icons/tb";
 import { FaHandHoldingHeart, FaHandHoldingUsd } from "react-icons/fa";
 import { GiTripleBeak } from "react-icons/gi";
 import { FiCreditCard, FiHome } from "react-icons/fi";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { LiaClipboardListSolid } from "react-icons/lia";
-
 import {
   MdAddCard,
   MdLink,
@@ -35,34 +45,41 @@ import {
 } from "react-icons/md";
 import { AiFillBank } from "react-icons/ai";
 import { BiCreditCardAlt, BiStore } from "react-icons/bi";
-import { FaMoneyBillTransfer, FaMoneyBillTrendUp } from "react-icons/fa6";
+import {
+  FaMoneyBillTransfer,
+  FaMoneyBillTrendUp,
+  FaPersonDotsFromLine,
+  FaSackDollar,
+} from "react-icons/fa6";
 import { BsBagPlus, BsBarChart } from "react-icons/bs";
 import { PiCar, PiStudent } from "react-icons/pi";
-import { LuUserSquare, LuWalletCards } from "react-icons/lu";
+import { LuShip, LuUserSquare, LuWalletCards } from "react-icons/lu";
 
 const Header = () => {
   const [isShowPopup, setIsShowPopup] = useState(false);
   const [isShowIndividual, setIsShowIndividual] = useState(false);
   const [isShowIndividual2, setIsShowIndividual2] = useState(false);
 
-  document
-    .querySelectorAll(
-      ".menu__dropdown-sidebar--list .menu__dropdown-sidebar--item"
-    )
-    .forEach((item, index) => {
-      item.addEventListener("mouseover", () => {
-        document
-          .querySelectorAll(".sub-menu-content")
-          .forEach((menu, menuIndex) => {
-            menu.style.display = menuIndex === index ? "block" : "none";
+  useEffect(() => {
+    document
+      .querySelectorAll(
+        ".menu__dropdown-sidebar--list .menu__dropdown-sidebar--item"
+      )
+      .forEach((item, index) => {
+        item.addEventListener("mouseover", () => {
+          document
+            .querySelectorAll(".sub-menu-content")
+            .forEach((menu, menuIndex) => {
+              menu.style.display = menuIndex === index ? "block" : "none";
+            });
+        });
+        item.addEventListener("mouseout", () => {
+          document.querySelectorAll(".sub-menu-content").forEach((menu) => {
+            menu.style.display = "none";
           });
-      });
-      item.addEventListener("mouseout", () => {
-        document.querySelectorAll(".sub-menu-content").forEach((menu) => {
-          menu.style.display = "none";
         });
       });
-    });
+  });
 
   return (
     <>
@@ -715,7 +732,7 @@ const Header = () => {
                                       </p>
                                     </div>
                                     <div className="sub-menu__dropdown-info--item">
-                                      <MdHealthAndSafety
+                                      <LuShip
                                         color="#2a81d0"
                                         className="icon"
                                       />
@@ -724,12 +741,12 @@ const Header = () => {
                                       </p>
                                     </div>
                                     <div className="sub-menu__dropdown-info--item">
-                                      <TbShieldCheckered
+                                      <FaFileInvoiceDollar
                                         color="#2a81d0"
                                         className="icon"
                                       />
                                       <p className="sub-menu__dropdown-info-content">
-                                        Bảo hiểm tài sản
+                                        L/C nội địa
                                       </p>
                                     </div>
                                   </div>
@@ -739,46 +756,28 @@ const Header = () => {
                                 className="menu__dropdown-sidebar--item"
                                 data-index="6"
                               >
-                                <p>Dịch vụ</p>
+                                <p>Tiền gửi có kỳ hạn</p>
                                 <div
                                   className="sub-menu-content"
                                   data-index="1"
                                 >
                                   <div className="sub-menu__dropdown-item--content">
                                     <div className="sub-menu__dropdown-info--item">
-                                      <MdOutlineTransferWithinAStation
+                                      <TbClockDollar
                                         color="#2a81d0"
                                         className="icon"
                                       />
                                       <p className="sub-menu__dropdown-info-content">
-                                        Dịch vụ ngoại hối
+                                        Tiền gửi có kỳ hạn
                                       </p>
                                     </div>
                                     <div className="sub-menu__dropdown-info--item">
-                                      <FaMoneyBillTransfer
+                                      <FaRegHourglass
                                         color="#2a81d0"
                                         className="icon"
                                       />
                                       <p className="sub-menu__dropdown-info-content">
-                                        Dịch vụ chuyển tiền
-                                      </p>
-                                    </div>
-                                    <div className="sub-menu__dropdown-info--item">
-                                      <FaHandHoldingUsd
-                                        color="#2a81d0"
-                                        className="icon"
-                                      />
-                                      <p className="sub-menu__dropdown-info-content">
-                                        Dịch vụ khác
-                                      </p>
-                                    </div>
-                                    <div className="sub-menu__dropdown-info--item">
-                                      <RiMoneyDollarCircleLine
-                                        color="#2a81d0"
-                                        className="icon"
-                                      />
-                                      <p className="sub-menu__dropdown-info-content">
-                                        Kiều hối
+                                        Tiền gửi tự động
                                       </p>
                                     </div>
                                   </div>
@@ -788,37 +787,150 @@ const Header = () => {
                                 className="menu__dropdown-sidebar--item"
                                 data-index="7"
                               >
-                                <p>Sacombank Imperial</p>
+                                <p>Tài trợ thương mại và thanh toán quốc tế</p>
                                 <div
                                   className="sub-menu-content"
                                   data-index="1"
                                 >
                                   <div className="sub-menu__dropdown-item--content">
                                     <div className="sub-menu__dropdown-info--item">
-                                      <TbListCheck
+                                      <TbWorldDollar
                                         color="#2a81d0"
                                         className="icon"
                                       />
                                       <p className="sub-menu__dropdown-info-content">
-                                        Điều kiện tham gia
+                                        Tài trợ thương mại
                                       </p>
                                     </div>
                                     <div className="sub-menu__dropdown-info--item">
-                                      <TbGift
+                                      <TbTruckDelivery
                                         color="#2a81d0"
                                         className="icon"
                                       />
                                       <p className="sub-menu__dropdown-info-content">
-                                        Đặc quyền Sacombank Imperial
+                                        Dịch vụ nhập khẩu
                                       </p>
                                     </div>
                                     <div className="sub-menu__dropdown-info--item">
-                                      <LiaClipboardListSolid
+                                      <LuShip
                                         color="#2a81d0"
                                         className="icon"
                                       />
                                       <p className="sub-menu__dropdown-info-content">
-                                        Sản phẩm dịch vụ
+                                        Dịch vụ xuất khẩu
+                                      </p>
+                                    </div>
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <TbShieldSearch
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Công cụ tra cứu
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                className="menu__dropdown-sidebar--item"
+                                data-index="7"
+                              >
+                                <p>Dịch vụ quản lý đồng tiền</p>
+                                <div
+                                  className="sub-menu-content"
+                                  data-index="1"
+                                >
+                                  <div className="sub-menu__dropdown-item--content">
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <FaSackDollar
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Quản lý tài khoản phải thu
+                                      </p>
+                                    </div>
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <FaSackDollar
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Quản lý khoản phải trả
+                                      </p>
+                                    </div>
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <FaRegUser
+                                        p
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Tài khoản trung tâm
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                className="menu__dropdown-sidebar--item"
+                                data-index="7"
+                              >
+                                <p>Tài trợ cung ứng</p>
+                                <div
+                                  className="sub-menu-content"
+                                  data-index="1"
+                                >
+                                  <div className="sub-menu__dropdown-item--content">
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <FaPersonDotsFromLine
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Tài trợ nhà phân phối
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                className="menu__dropdown-sidebar--item"
+                                data-index="7"
+                              >
+                                <p>Giải pháp phòng ngừa rủi ro</p>
+                                <div
+                                  className="sub-menu-content"
+                                  data-index="1"
+                                >
+                                  <div className="sub-menu__dropdown-item--content">
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <TbCurrencyDollarSingapore
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Tỷ giá
+                                      </p>
+                                    </div>
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <FaShoppingBasket
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Phái sinh giá cả hàng hóa
+                                      </p>
+                                    </div>
+                                    <div className="sub-menu__dropdown-info--item">
+                                      <FaRegUser
+                                        p
+                                        color="#2a81d0"
+                                        className="icon"
+                                      />
+                                      <p className="sub-menu__dropdown-info-content">
+                                        Tài khoản trung tâm
                                       </p>
                                     </div>
                                   </div>
