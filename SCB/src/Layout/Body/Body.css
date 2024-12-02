@@ -55,7 +55,9 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border-bottom: 1px solid #d8dde2;
 }
+
 .banner-details-title {
   font-size: 36px;
   line-height: 50px;
@@ -76,6 +78,7 @@
   text-align: center;
   font-size: 1rem;
   gap: 4px;
+  padding-bottom: 2rem;
 }
 .icon-wrapper {
   display: flex;
@@ -106,4 +109,95 @@
   background-color: #007bff;
   transition: width 0.5s ease;
   border-radius: 8px 0 0 8px;
+}
+
+.right-side {
+  width: 22.393%;
+}
+.cmp-most-viewed {
+  padding-left: 0.5rem;
+  width: 270px;
+}
+.cmp-most-viewed__title {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0px 0px 10px;
+}
+.cmp-most-viewed__title,
+.cmp-most-viewed__list .most-viewed-item {
+  padding: 10px 0;
+}
+.cmp-most-viewed__list .most-viewed-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 15px;
+  line-height: 20px;
+  border-top: 1px solid #d8dde2;
+}
+.cmp-most-viewed__list .most-viewed-item:last-child {
+  border-bottom: 1px solid #d8dde2;
+}
+.most-viewed-item .most-viewed-item_title {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  width: 250px;
+}
+.most-viewed-item .most-viewed-item__info {
+  color: #989fa6;
+  font-weight: 600;
+}
+.promotiondetailsdata {
+  padding: 2rem 0;
+}
+.cmp-promotion-details-data {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cmp-promotion-details-data .data-header {
+  font-size: 24px;
+}
+.data-section,
+.data-section .section-wrapper,
+.data-section--more-information {
+  display: flex;
+  flex-direction: column;
+  /* font-size: 18px; */
+  padding: 1px 0;
+  gap: 1rem;
+}
+.data-section .section-wrapper .data-section--header {
+  font-size: 18px;
+  font-weight: 650;
+}
+.data-section_list {
+  list-style: disc;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+.extra-space {
+  margin: 0 5px;
+  text-decoration: none;
+}
+.data-section_list .data-section_list--item {
+  text-decoration: none;
+}
+.table-container--body {
+  padding: 1pc;
+}
+.table-container table .table-container--body {
+  border: 1px solid var(--aux-color);
+  border-radius: 10px;
+}
+.table-container table .table-container--body .table-container--title {
+  background-color: #d8dde2;
+  font-weight: bold;
+}
+.table-container--body td {
+  border: 1px solid #989fa6;
+  padding: 1pc;
 }

@@ -89,11 +89,116 @@ const Body = () => {
               </div>
             </div>
           </div>
-          <div></div>
+          <div className="promotiondetailsdata">
+            <div className="cmp-promotion-details-data">
+              <div className="data-header">
+                <h2>Nội dung ưu đãi</h2>
+              </div>
+              <div className="data-section">
+                <div className="section-wrapper">
+                  <div className="data-section--header">Khách hàng áp dụng</div>
+                  <div className="data-section--more-information">
+                    <p>Khách hàng Cá nhân và Doanh nghiệp trên toàn quốc.</p>
+                  </div>
+                </div>
+                <div className="section-wrapper">
+                  <div className="data-section--header">
+                    Thông tin chi tiết chương trình
+                  </div>
+                  <div className="data-section--more-information">
+                    <p>
+                      <b>
+                        Gói vay sản xuất kinh doanh ngắn hạn (Tối đa 6 tháng):
+                        15.000 tỷ VND
+                      </b>
+                    </p>
+                    <div className="table-container">
+                      <table>
+                        <tbody className="table-container--body">
+                          <tr className="table-container--title">
+                            <td>Nội dung</td>
+                            <td>Lãi suất ưu đãi</td>
+                          </tr>
+                          <tr className="table-container--content">
+                            <td>Khách hàng Cá nhân</td>
+                            <td>Chỉ từ 5,5%/năm</td>
+                          </tr>
+                          <tr className="table-container--content">
+                            <td>Khách hàng Doanh nghiệp</td>
+                            <td>Chỉ từ 4,5%/năm</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <p>
+                      <b>Thanh toán khoản vay dễ dàng với các tính năng:</b>
+                    </p>
+                    <ul className="data-section_list">
+                      <li className="data-section_list--item">
+                        Thanh toán trực tuyến khoản vay qua app
+                        <a href="#" className="extra-space">
+                          Sacombank Pay
+                        </a>
+                        ,
+                        <a href="#" className="extra-space">
+                          mBanking
+                        </a>
+                        và
+                        <a href="#" className="extra-space">
+                          Internet Banking
+                        </a>
+                      </li>
+                      <li className="data-section_list--item">
+                        Trích nợ tự động từ tài khoản thanh toán (đối với khách
+                        hàng có đăng ký)
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="right-side"></div>
+        <div className="right-side">
+          <div className="cmp-most-viewed">
+            <h3 className="cmp-most-viewed__title">Tin khác</h3>
+            <div className="cmp-most-viewed__list">
+              <div className="most-viewed-item">
+                <a href="" className="most-viewed-item_title">
+                  Black Friday - Deal giữa &quot;ngày rực rỡ&quot;
+                </a>
+                <p className="most-viewed-item__info">26/11/2024</p>
+              </div>
+              <div className="most-viewed-item">
+                <a href="" className="most-viewed-item_title">
+                  Mở thẻ JCB – &quot;Kích hoạt&quot; vạn deal
+                </a>
+                <p className="most-viewed-item__info">11/09/2024</p>
+              </div>
+              <div className="most-viewed-item">
+                <a href="" className="most-viewed-item_title">
+                  Trọn lời tri ân - Ươm mầm tri thức
+                </a>
+                <p className="most-viewed-item__info">01/11/2024</p>
+              </div>
+              <div className="most-viewed-item">
+                <a href="" className="most-viewed-item_title">
+                  Ocean Waves Resort Cam Ranh
+                </a>
+                <p className="most-viewed-item__info">19/11/2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="xfpage page basicpage"></div>
+      <div className="relatedlist">
+        <div className="cmp-related-promotions-list">
+          <h3 className="cmp-related-promotions-list__title">
+            Ưu đãi
+            <span>liên quan</span>
+          </h3>
+        </div>
+      </div>
     </div>
   );
 };
