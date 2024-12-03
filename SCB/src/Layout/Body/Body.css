@@ -97,7 +97,7 @@
 }
 .progress-bar-wrapper {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: #b5deed;
   border-radius: 8px;
   height: 8px;
   width: 10pc;
@@ -201,6 +201,12 @@
   border: 1px solid #989fa6;
   padding: 1pc;
 }
+.cmp-related-promotions-list__content {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
 .cmp-related-promotions-list__title {
   display: flex;
   gap: 0.75rem;
@@ -210,5 +216,50 @@
 .cmp-related-promotions-list__title span {
   color: var(--blue-color);
 }
-.relatedlist {
+.cmp-related-promotions-list__content-item {
+  background-color: rgb(235, 226, 226);
+  border-radius: 10px;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  width: calc(33.33333% - 20px);
+}
+.cmp-related-promotions-list__content-item:hover {
+  background-color: var(--primary-color);
+}
+.cmp-related-promotions-list__content-item .banner-image {
+  padding: 0.25rem;
+}
+.cmp-related-promotions-list__content-item:hover .banner-image img {
+  border-radius: 10px;
+  height: calc(100% - 1pc);
+  margin: 1pc 1pc 0;
+  width: calc(100% - 2pc);
+}
+.cmp-related-promotions-list__content-item .banner-image img {
+  cursor: pointer;
+  height: 100%;
+  max-height: 13pc;
+  max-width: 370px;
+  object-fit: cover;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+  width: 100%;
+}
+.cmp-related-promotions-list__content-item .banner-details {
+  color: #5e656b;
+  /* color: white; */
+  padding: 0 1.5rem;
+}
+.cmp-related-promotions-list__content-item .banner-details--header {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 28px;
+  text-decoration: none;
+}
+.cmp-related-promotions-list__content-item:hover .banner-details--header,
+.cmp-related-promotions-list__content-item:hover .banner-details--timer,
+.cmp-related-promotions-list__content-item:hover .progress-timer,
+.cmp-related-promotions-list__content-item:hover .banner-details-location {
+  color: white;
 }

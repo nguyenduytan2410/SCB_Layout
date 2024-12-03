@@ -1,8 +1,13 @@
 import "./Body.css";
 import banner from "../../assets/img/banner1.jpg";
+import item1 from "../../assets/img/item1.jpg";
+import item2 from "../../assets/img/item2.jpg";
+import item3 from "../../assets/img/item3.jpg";
+
 import { SlLocationPin } from "react-icons/sl";
 import { GoClock } from "react-icons/go";
 import { useEffect, useState } from "react";
+import BodyItem from "./BodyItem";
 
 const Body = () => {
   const [timeLeft, setTimeLeft] = useState("");
@@ -199,7 +204,30 @@ const Body = () => {
           </h3>
         </div>
         <div className="cmp-related-promotions-list__content">
-          <div className="cmp-related-promotions-list__content-item"></div>
+          <BodyItem
+            picture={item1}
+            title={"DealToday"}
+            time1={"2024-12-01"}
+            timeProcess={"2025-01-25T23:59:59"}
+            time1Title={"01/12/2024"}
+            time2Title={"25/01/2025"}
+          />
+          <BodyItem
+            picture={item2}
+            title={"Ocean Waves Resort Cam Ranh"}
+            time1={"2024-11-19"}
+            timeProcess={"2025-01-31T23:59:59"}
+            time1Title={"19/11/2024"}
+            time2Title={"31/10/2025"}
+          />
+          <BodyItem
+            picture={item3}
+            title={"Nội thất Sofa Xinh"}
+            time1={"2024-10-01"}
+            timeProcess={"2099-01-01T23:59:59"}
+            time1Title={"01/10/2024"}
+            time2Title={"01/01/2099"}
+          />
         </div>
       </div>
     </div>
