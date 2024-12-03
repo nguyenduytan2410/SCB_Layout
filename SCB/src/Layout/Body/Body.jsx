@@ -56,8 +56,8 @@ const Body = () => {
           <a href="#">Kinh doanh vượt mốc - Lãi sốc đồng hành</a>
         </div>
       </div>
-      <div className="wrapper">
-        <div className="left-side">hi</div>
+      <div className="wrapper grid wide">
+        <div className="left-side">Icon FB + like</div>
         <div className="content">
           <div className="promotiondetail">
             <div className="banner-img">
@@ -191,12 +191,15 @@ const Body = () => {
           </div>
         </div>
       </div>
-      <div className="relatedlist">
+      <div className="relatedlist grid wide">
         <div className="cmp-related-promotions-list">
           <h3 className="cmp-related-promotions-list__title">
             Ưu đãi
             <span>liên quan</span>
           </h3>
+        </div>
+        <div className="cmp-related-promotions-list__content">
+          <div className="cmp-related-promotions-list__content-item"></div>
         </div>
       </div>
     </div>
