@@ -62,7 +62,7 @@ const Body = () => {
         </div>
       </div>
       <div className="wrapper grid wide">
-        <div className="left-side">Icon FB + like</div>
+        <div className="left-side"> </div>
         <div className="content">
           <div className="promotiondetail">
             <div className="banner-img">
